@@ -1,0 +1,63 @@
+html {
+    font-family: 'Roboto', sans-serif;
+}
+
+.global-header {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    background: none;
+    width: 100%;
+    padding: 1.5rem 5rem;
+    z-index: 999;
+}
+
+.global-header-logo-wrapper {
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    border: 5px solid #788d58;
+    background-color: #fff;
+    padding-top: 2px;
+    overflow: hidden;
+}
+
+.global-header-logo {
+    object-fit: contain;
+}
+
+.global-header-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    margin-left: 1rem;
+}
+
+.global-header-menu {
+    display: flex;
+    flex-direction: row;
+}
+
+.global-header-menu-item {
+    margin: 0 1em;
+}
+
+.global-header-menu-item p {
+    font-weight: 500;
+    font-size: medium;
+    color: whitesmoke;
+}
+
+.global-header-contacts {
+    display: flex;
+    flex-direction: row;
+}
+
+.global-header-contacts-item {
+    margin: 0 1em;
+    text-decoration: none;
+    color: whitesmoke;
+}
+
