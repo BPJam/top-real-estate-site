@@ -45,11 +45,14 @@ function expandBlock(id) {
     for (let el of faqMore.children) {
         if(el.children[1].children[0].id === id) {
             if (el.classList.contains('expand')) {
+                el.children[1].children[0].src = 'assets/plus.png';
                 el.removeChild(document.getElementById(`answer-${id}`));
                 return el.classList.remove('expand');
             }
 
             el.classList.add('expand');
+
+            el.children[1].children[0].src = 'assets/minus.png';
 
             const paragrapf = document.createElement('p');
             paragrapf.id = `answer-${id}`;
