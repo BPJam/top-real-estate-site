@@ -1,2 +1,8 @@
 @import url('./main-header.css');
+@import url('./main-section-company-info.css');
+@import url('./main-section-products.css');
+
+.main {
+    width: 100%;
+}
 
