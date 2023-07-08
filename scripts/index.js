@@ -31,3 +31,32 @@ for (let i = 1; i <= numSlidesToAdd; i++) {
 
 document.head.appendChild(styleElement);
 
+const faqMore = document.getElementById('faqMore');
+
+faqMore.addEventListener('click', ({ target }) => showMore(target));
+
+function showMore(target) {
+    if (target.id.startsWith('faqMore')) {
+        expandBlock(target.id)
+    }
+}
+
+function expandBlock(id) {
+    for (let el of faqMore.children) {
+        if(el.children[1].children[0].id === id) {
+            if (el.classList.contains('expand')) {
+                el.removeChild(document.getElementById(`answer-${id}`));
+                return el.classList.remove('expand');
+            }
+
+            el.classList.add('expand');
+
+            const paragrapf = document.createElement('p');
+            paragrapf.id = `answer-${id}`;
+            paragrapf.textContent = 'Вiдповідь на запитання';
+            paragrapf.classList.toggle('answer');
+
+            return el.append(paragrapf)
+        }
+    }
+}  

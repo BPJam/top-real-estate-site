@@ -3,6 +3,8 @@
 @import url('./main-section-products.css');
 @import url('./main-section-delemitter.css');
 @import url('./main-section-reviews.css');
+@import url('./main-section-director.css');
+@import url('./main-section-faq.css');
 
 .main {
     width: 100%;
