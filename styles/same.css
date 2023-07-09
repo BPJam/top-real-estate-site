@@ -1,7 +1,9 @@
 html, body {
     scrollbar-color: black grey;
     scrollbar-width: thin;
+    font-family: 'Roboto Serif', serif;
 }
+
 
 ::-webkit-scrollbar {
     background-color: grey;

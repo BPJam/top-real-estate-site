@@ -5,6 +5,7 @@
 @import url('./main-section-reviews.css');
 @import url('./main-section-director.css');
 @import url('./main-section-faq.css');
+@import url('./main-section-callback.css');
 
 .main {
     width: 100%;
