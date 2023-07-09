@@ -1,14 +1,10 @@
-html {
-    font-family: 'Roboto', sans-serif;
-}
-
 .global-header {
     position: absolute;
     display: flex;
     flex-direction: row;
     background: none;
     width: 100%;
-    padding: 1.5rem 5rem;
+    padding: 1.5rem 6.5rem;
     z-index: 999;
 }
 

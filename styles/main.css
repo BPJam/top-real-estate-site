@@ -1,2 +1,13 @@
 @import url('./main-header.css');
+@import url('./main-section-company-info.css');
+@import url('./main-section-products.css');
+@import url('./main-section-delemitter.css');
+@import url('./main-section-reviews.css');
+@import url('./main-section-director.css');
+@import url('./main-section-faq.css');
+@import url('./main-section-callback.css');
+
+.main {
+    width: 100%;
+}
 
