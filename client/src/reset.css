@@ -44,6 +44,7 @@ html {
     scrollbar-color: black grey;
     scrollbar-width: thin;
     font-family: 'Roboto Serif', serif;
+    scroll-behavior: smooth;
 }
 
 

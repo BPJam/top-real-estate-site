@@ -55,7 +55,7 @@ function Header({ load }) {
             <Box component={'nav'} sx={ headerStyle.globalHeader.nav }>
                 <List sx={ headerStyle.globalHeader.nav.menu }>
                     <ListItem sx={ headerStyle.globalHeader.nav.menu.item }>
-                        <Link>
+                        <Link href='#about-us'>
                             <ListItemText primary='ПРО&nbsp;НАС' />
                         </Link>
                     </ListItem>

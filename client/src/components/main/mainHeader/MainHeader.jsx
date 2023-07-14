@@ -3,7 +3,7 @@ import { Box, Button, Card, CardContent, CardMedia, Typography } from '@mui/mate
 
 function MainHeader({ load, isLoaded }) {
     return (
-        <Box component={'section'} sx={{ height: '100vh', width: '100vw' }}>
+        <Box component={'section'} sx={{ height: '100vh', width: '100%' }}>
             <Card sx={{ border: 'none', boxShadow: 'none', backgroundColor: 'initial', height: '100%', width: '100%'  }}>
                 <Box sx={{ zIndex: -2, backgroundColor: 'black', position: 'relative', height: '100%', width: '100%' }}>
                     <CardMedia
