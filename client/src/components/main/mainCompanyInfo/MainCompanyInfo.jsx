@@ -5,12 +5,12 @@ function MainCompanyInfo() {
     return (
         <Box component={'section'} sx={{ width: '100%', height: 'calc(100vh + 14em)', padding: '6rem' }}>
             <Box id='about-us' component={'section'} sx={{ width: '100%', height: '100%', display: 'flex', flexDirection: 'row', paddingTop: '2rem', paddingBottom: '2.5rem' }}>
-                <Box component={'section'} sx={{ width: '50%', height: '100%' }}>
-                    <Typography component={'h1'} sx={{ height: '35%', fontSize: '2.8rem', fontWeight: 500, color: '#788d58', paddingTop: '1rem' }}>
+                <Box component={'section'} sx={{ width: '50%', height: '100%', display: 'flex', flexDirection: 'column' }}>
+                    <Typography component={'h1'} sx={{ lineHeight: 'initial', fontSize: '2.8rem', fontWeight: 500, color: '#788d58', paddingTop: '1rem' }}>
                         Елітна нерухомість Києва та Київської області
                     </Typography>
 
-                    <Box component={'section'} sx={{ display: 'flex', flexDirection: 'column', height: '65%', width: '80%', justifyContent: 'space-around', '& > p': { ':first-letter': { fontWeight: 600, fontSize: '1.3rem' }, fontWeight: 500 } }}>
+                    <Box component={'section'} sx={{ display: 'flex', flexDirection: 'column', flexGrow: '1', height: '65%', width: '80%', justifyContent: 'space-around', '& > p': { ':first-letter': { fontWeight: 600, fontSize: '1.3rem' }, fontWeight: 500 } }}>
                         <Typography sx={{ fontSize: '1rem' }} component={'p'}>
                             Наші основні цінності - чесність, порядність та уважність до деталей.
                             Наші досвідчені професіонали були обрані за своєю вірою та зобов'язаністю

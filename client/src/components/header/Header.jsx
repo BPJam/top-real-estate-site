@@ -61,7 +61,7 @@ function Header({ load }) {
                     </ListItem>
 
                     <ListItem sx={ headerStyle.globalHeader.nav.menu.item }>
-                        <Link> 
+                        <Link href='#services'>
                             <ListItemText primary={`ПОСЛУГИ`} />
                         </Link>
                     </ListItem>

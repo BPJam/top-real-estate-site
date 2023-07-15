@@ -5,7 +5,7 @@ const headerStyle = {
         flexDirection: 'row',
         background: 'none',
         width: '100%',
-        padding: '1.5rem 6em',
+        padding: '1.5rem 6rem',
         alignItems: 'center',
         zIndex: 999,
 
