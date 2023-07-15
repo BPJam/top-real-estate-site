@@ -67,8 +67,8 @@ function Header({ load }) {
                     </ListItem>
 
                     <ListItem sx={ headerStyle.globalHeader.nav.menu.item }>
-                        <Link>
-                            <ListItemText primary={`ОБ'ЄКТИ`} />
+                        <Link href='#objects'>
+                            <ListItemText primary={`ПРОПОЗИЦІЇ`} />
                         </Link>
                     </ListItem>
 
