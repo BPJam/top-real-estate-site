@@ -1,0 +1,23 @@
+html, body {
+    scrollbar-color: black grey;
+    scrollbar-width: thin;
+    font-family: 'Roboto Serif', serif;
+}
+
+
+::-webkit-scrollbar {
+    background-color: grey;
+    width: 8px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: black;
+    border-radius: 1em;
+    box-shadow: inset 1px 1px 10px grey;
+}
+
+.link {
+    text-decoration: none;
+    color: inherit;
+}
