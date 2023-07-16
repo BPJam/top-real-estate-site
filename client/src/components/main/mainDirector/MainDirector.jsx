@@ -4,7 +4,7 @@ import { Box, Typography } from '@mui/material';
 function MainDirector() {
     return (
         <Box component={'section'} sx={{ width: '100%', height: 'calc(100vh + 8em)', padding: '6rem', backgroundColor: '#F1EEEE' }}>
-            <Box component={'section'} sx={{ width: '100%', height: '100%', display: 'flex', flexDirection: 'row', backgroundColor: 'white' }}>
+            <Box component={'section'} sx={{ width: '100%', height: '100%', display: 'flex', flexDirection: 'row', backgroundColor: 'white', borderRadius: '0.3rem' }}>
                 <Box component={'section'} sx={{ display: 'flex', flexDirection: 'column', alignItems: 'start', width: '50%', padding: '7rem 6rem'}}>
                     <Typography component={'h1'} sx={{ textAlign: 'rigth', fontSize: '1.8rem', fontWeight: 600  }}>
                         Софійчук Вікторія Константинівна
@@ -26,7 +26,7 @@ function MainDirector() {
                     </Typography>
                 </Box>
 
-                <Box component={'img'} sx={{ width: '50%', height: '100%', objectFit: 'cover', objectPosition: '50% 40%' }} src='./director.jpeg' alt='director' />
+                <Box component={'img'} sx={{ width: '50%', height: '100%', objectFit: 'cover', objectPosition: '50% 40%', borderRadius: '0.3rem' }} src='./director.jpeg' alt='director' />
             </Box>
         </Box>
     );

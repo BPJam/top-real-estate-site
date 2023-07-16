@@ -80,7 +80,7 @@ function MainProducts() {
                             return (
                                 <Fragment key={e._id}>
                                     <Grid item xs={4}>
-                                        <Box component={'section'} sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '2rem', '&:hover': { backgroundColor: '#e0e0e0' } }}>
+                                        <Box component={'section'} sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '2rem', '&:hover': { backgroundColor: '#e0e0e0' }, borderRadius: '0.3rem' }}>
                                             <Box component={'img'} src={e.image} alt={e.title} sx={{ width: '6rem', height: '6rem', mb: '1.5rem' }} />
 
                                             <Typography component={'h2'} sx={{ fontWeight: 500, mb: '1rem', fontSize: '1.3rem' }}>

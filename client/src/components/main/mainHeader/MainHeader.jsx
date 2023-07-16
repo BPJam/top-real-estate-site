@@ -72,7 +72,7 @@ function MainHeader({ load, isLoaded }) {
                                     onClose={ (_, reason) => onClose(reason) }
                                     hideBackdrop={ false }
                                 >
-                                    <Box sx={{ backgroundColor: 'rgba(0,0,0,0.8)', position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}>
+                                    <Box sx={{ backgroundColor: 'rgba(0,0,0,0.8)', position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', borderRadius: '0.3rem' }}>
                                         <List>
                                             <ListSubheader sx={{ backgroundColor: 'rgba(0,0,0,0)', color: 'whitesmoke', textAlign: 'center', cursor: 'default', fontSize: '0.9rem' }}>Подзвонити:</ListSubheader>
                                             <ListItem>

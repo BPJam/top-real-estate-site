@@ -151,7 +151,7 @@ function Header({ load }) {
                 onClose={ (_, reason) => onClose(reason) }
                 hideBackdrop={ false }
             >
-                <Box sx={{ backgroundColor: 'rgba(0,0,0,0.8)', position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}>
+                <Box sx={{ backgroundColor: 'rgba(0,0,0,0.8)', position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', borderRadius: '0.3rem' }}>
                     <List>
                         <ListItem>
                             <ListItemButton disableRipple sx={{ '&:hover': { backgroundColor: 'rgba(255,255,255,0.2)', } }}>
