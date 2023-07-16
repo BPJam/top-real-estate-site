@@ -48,7 +48,8 @@ const headerStyle = {
 
                         '& > div > span': {
                             fontWeight: 500,
-                            color: 'whitesmoke'
+                            color: 'whitesmoke',
+                            cursor: 'pointer'
                         }
                     }
                 }
@@ -64,21 +65,25 @@ const headerStyle = {
 
                     '&:first-of-type': {
                         display: 'flex',
-                        flexDirection: 'column'
+                        flexDirection: 'column',
+                        cursor: 'pointer'
                     },
 
                     '& > div > div > span': {
                         fontWeight: 500,
-                        color: 'whitesmoke'
+                        color: 'whitesmoke',
+                        cursor: 'pointer'
                     },
 
                     '& > a > div > span': {
                         fontWeight: 500,
-                        color: 'whitesmoke'
+                        color: 'whitesmoke',
+                        cursor: 'pointer'
                     },
 
                     '& > div > svg': {
-                        color: 'whitesmoke'
+                        color: 'whitesmoke',
+                        cursor: 'pointer'
                     }
                 }
             }

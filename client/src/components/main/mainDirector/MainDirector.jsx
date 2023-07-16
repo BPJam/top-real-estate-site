@@ -3,14 +3,14 @@ import { Box, Typography } from '@mui/material';
 
 function MainDirector() {
     return (
-        <Box component={'section'} sx={{ width: '100%', height: 'calc(100vh + 6em)', padding: '6rem', backgroundColor: '#F1EEEE' }}>
+        <Box component={'section'} sx={{ width: '100%', height: 'calc(100vh + 8em)', padding: '6rem', backgroundColor: '#F1EEEE' }}>
             <Box component={'section'} sx={{ width: '100%', height: '100%', display: 'flex', flexDirection: 'row', backgroundColor: 'white' }}>
                 <Box component={'section'} sx={{ display: 'flex', flexDirection: 'column', alignItems: 'start', width: '50%', padding: '7rem 6rem'}}>
-                    <Typography component={'h1'} sx={{ textAlign: 'rigth', fontSize: '2rem', fontWeight: 600, color: '#788d58'  }}>
+                    <Typography component={'h1'} sx={{ textAlign: 'rigth', fontSize: '1.8rem', fontWeight: 600  }}>
                         Софійчук Вікторія Константинівна
                     </Typography>
                     
-                    <Typography component={'p'} sx={{ fontSize: '0.9rem', textAlign: 'rigth', fontWeight: 600 , flexGrow: 1 }}>
+                    <Typography component={'p'} sx={{ fontSize: '0.9rem', textAlign: 'rigth', fontWeight: 600 , flexGrow: 1, color: '#788d58' }}>
                         Генеральний Директор 
                     </Typography>
 

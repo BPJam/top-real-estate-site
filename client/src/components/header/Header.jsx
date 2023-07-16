@@ -73,7 +73,7 @@ function Header({ load }) {
                     </ListItem>
 
                     <ListItem sx={ headerStyle.globalHeader.nav.menu.item }>
-                        <Link>
+                        <Link href='#faq'>
                             <ListItemText primary={`ПИТАННЯ`} />
                         </Link>
                     </ListItem>
@@ -98,35 +98,35 @@ function Header({ load }) {
                             <List component={'section'} disablePadding>
                                 <ListItem disablePadding>
                                     <ListItemButton onClick={() => eventTaskClick('call')} disableRipple>
-                                        <ListItemIcon sx={{ minWidth: 0, pr: 1, color: 'whitesmoke' }}>
+                                        <ListItemIcon sx={{ minWidth: 0, pr: 1, color: 'whitesmoke', cursor: 'pointer' }}>
                                             <CallIcon />
                                         </ListItemIcon>
 
-                                        <ListItemText sx={{ color: 'whitesmoke' }} primary={`Подзвонити`} />
+                                        <ListItemText sx={{ color: 'whitesmoke', '& > span': { cursor: 'pointer' } }} primary={`Подзвонити`} />
                                     </ListItemButton>
                                 </ListItem>
 
                                 <ListItem disablePadding>
                                     <ListItemButton onClick={() => eventTaskClick('write')} disableRipple>
-                                        <ListItemIcon sx={{ minWidth: 0, pr: 1, color: 'whitesmoke' }}>
+                                        <ListItemIcon sx={{ minWidth: 0, pr: 1, color: 'whitesmoke', cursor: 'pointer' }}>
                                             <SendIcon />
                                         </ListItemIcon>
 
-                                        <ListItemText sx={{ color: 'whitesmoke' }} primary={`Написати`} />
+                                        <ListItemText sx={{ color: 'whitesmoke', '& > span': { cursor: 'pointer' } }} primary={`Написати`} />
                                     </ListItemButton>
                                 </ListItem>
 
                                 <ListItem disablePadding>
                                     <ListItemButton disableRipple>
                                         <Link target={'_blank'} href={'https://instagram.com/top_in_estate?igshid=MjEwN2IyYWYwYw=='}>
-                                            <ListItemIcon sx={{ minWidth: 0, pr: 1, color: 'whitesmoke' }}>
+                                            <ListItemIcon sx={{ minWidth: 0, pr: 1, color: 'whitesmoke', cursor: 'pointer' }}>
                                                 <InstagramIcon />
                                             </ListItemIcon>
                                         </Link>
 
                                         
                                         <Link target={'_blank'} href={'https://instagram.com/top_in_estate?igshid=MjEwN2IyYWYwYw=='}>
-                                            <ListItemText sx={{ color: 'whitesmoke' }}  primary={`Instagram`} />
+                                            <ListItemText sx={{ color: 'whitesmoke', '& > span': { cursor: 'pointer' } }}  primary={`Instagram`} />
                                         </Link>
                                     </ListItemButton>
                                 </ListItem>
@@ -156,7 +156,7 @@ function Header({ load }) {
                         <ListItem>
                             <ListItemButton disableRipple sx={{ '&:hover': { backgroundColor: 'rgba(255,255,255,0.2)', } }}>
                                 <Link target={ modalTask === 'write' ? '_blank' : '_top' } href={ modalTask === 'call' ? 'tel:+380978357007' : modalTask === 'write' ? 'https://api.whatsapp.com/send?phone=380937525497' : '#' }>
-                                    <ListItemIcon sx={{ minWidth: 0, pr: 1 }}>
+                                    <ListItemIcon sx={{ minWidth: 0, pr: 1, cursor: 'pointer' }}>
                                         { 
                                             modalTask === 'call' ?
                                                 <Kyivstar />
@@ -172,10 +172,10 @@ function Header({ load }) {
                                 <Link target={ modalTask === 'write' ? '_blank' : '_top' } href={ modalTask === 'call' ? 'tel:+380978357007' : modalTask === 'write' ? 'https://api.whatsapp.com/send?phone=380937525497' : '#' }>
                                     { 
                                         modalTask === 'call' ?
-                                            <ListItemText sx={{ color: 'whitesmoke' }} primary={`+380 97 835 70 07`} />
+                                            <ListItemText sx={{ color: 'whitesmoke', '& > span': { cursor: 'pointer' }  }} primary={`+380 97 835 70 07`} />
                                         :
                                             modalTask === 'write' ?
-                                                <ListItemText sx={{ color: 'whitesmoke' }} primary={`WhatsApp`} />
+                                                <ListItemText sx={{ color: 'whitesmoke', '& > span': { cursor: 'pointer' } }} primary={`WhatsApp`} />
                                             :
                                                 <ListItemText primary={''} />
                                     }
@@ -186,7 +186,7 @@ function Header({ load }) {
                         <ListItem>
                             <ListItemButton disableRipple sx={{ '&:hover': { backgroundColor: 'rgba(255,255,255,0.2)', } }}>
                                 <Link target={ modalTask === 'write' ? '_blank' : '_top' } href={ modalTask === 'call' ? 'tel:+380937525497' : modalTask === 'write' ? 'https://t.me/Viktoria_BayrakTB' : '#' }>
-                                    <ListItemIcon sx={{ minWidth: 0, pr: 1 }}>
+                                    <ListItemIcon sx={{ minWidth: 0, pr: 1, cursor: 'pointer' }}>
                                         { 
                                             modalTask === 'call' ?
                                                 <Lifecell />
@@ -202,10 +202,10 @@ function Header({ load }) {
                                 <Link target={ modalTask === 'write' ? '_blank' : '_top' } href={ modalTask === 'call' ? 'tel:+380937525497' : modalTask === 'write' ? 'https://t.me/Viktoria_BayrakTB' : '#' }>
                                     { 
                                         modalTask === 'call' ?
-                                            <ListItemText sx={{ color: 'whitesmoke' }} primary={'+380 93 752 54 97'} />
+                                            <ListItemText sx={{ color: 'whitesmoke', '& > span': { cursor: 'pointer' } }} primary={'+380 93 752 54 97'} />
                                         :
                                             modalTask === 'write' ?
-                                                <ListItemText sx={{ color: 'whitesmoke' }} primary={'Telegram'} />
+                                                <ListItemText sx={{ color: 'whitesmoke', '& > span': { cursor: 'pointer' } }} primary={'Telegram'} />
                                             :
                                                 <ListItemText primary={''} />
                                     }

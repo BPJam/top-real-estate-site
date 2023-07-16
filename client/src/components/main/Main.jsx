@@ -5,6 +5,7 @@ import MainCompanyInfo from './mainCompanyInfo/MainCompanyInfo';
 import MainProducts from './mainProducts/MainProducts';
 import MainObjects from './mainObjects/MainObjects';
 import MainDirector from './mainDirector/MainDirector';
+import MainFAQ from './mainFAQ/MainFAQ';
 
 function Main({ load, isLoaded }) {
     return (
@@ -17,6 +18,7 @@ function Main({ load, isLoaded }) {
             </Box>
             <MainObjects load={load} />
             <MainDirector load={load} />
+            <MainFAQ load={load} />
         </Box>
     );
 }
