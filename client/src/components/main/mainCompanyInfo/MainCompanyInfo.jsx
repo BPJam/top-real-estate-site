@@ -3,7 +3,7 @@ import { Box, Typography } from '@mui/material';
 
 function MainCompanyInfo() {
     return (
-        <Box component={'section'} sx={{ width: '100%', height: 'calc(100vh + 14em)', padding: '6rem' }}>
+        <Box component={'section'} sx={{ width: '100%', height: 'calc(100vh + 12rem)', padding: '6rem' }}>
             <Box id='about-us' component={'section'} sx={{ width: '100%', height: '100%', display: 'flex', flexDirection: 'row', paddingTop: '2rem', paddingBottom: '2.5rem' }}>
                 <Box component={'section'} sx={{ width: '50%', height: '100%', display: 'flex', flexDirection: 'column' }}>
                     <Typography component={'h1'} sx={{ lineHeight: 'initial', fontSize: '2.8rem', fontWeight: 500, color: '#788d58', paddingTop: '1rem' }}>

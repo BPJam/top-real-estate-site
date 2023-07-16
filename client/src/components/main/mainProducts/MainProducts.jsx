@@ -60,7 +60,7 @@ const items = [
 
 function MainProducts() {
     return (
-        <Box id='services' component={'section'} sx={{width: '100%', minHeight: 'calc(100vh + 14em)', padding: '6rem', backgroundColor: '#F1EEEE' }}>
+        <Box id='services' component={'section'} sx={{width: '100%', minHeight: 'calc(100vh + 12rem)', padding: '6rem', backgroundColor: '#F1EEEE' }}>
             <Box component={'section'} sx={{ width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                 <Box component={'section'} sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', mb: '3rem' }}>
                     <Typography component={'h1'} sx={{ textAlign: 'center', fontSize: '2.8rem', fontWeight: 500, color: '#788d58', mb: '2rem' }}>

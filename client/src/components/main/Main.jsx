@@ -4,6 +4,7 @@ import MainHeader from './mainHeader/MainHeader';
 import MainCompanyInfo from './mainCompanyInfo/MainCompanyInfo';
 import MainProducts from './mainProducts/MainProducts';
 import MainObjects from './mainObjects/MainObjects';
+import MainDirector from './mainDirector/MainDirector';
 
 function Main({ load, isLoaded }) {
     return (
@@ -14,7 +15,8 @@ function Main({ load, isLoaded }) {
             <Box component={'section'} sx={{ height: '75vh', width: '100%', backgroundColor: 'black' }}>
                 <Box component={'img'} sx={{ height: '100%', width: '100%', objectFit: 'cover', opacity: 0.5 }} src={'./skyscraper.jpeg'} alt='delemiter' />
             </Box>
-            <MainObjects />
+            <MainObjects load={load} />
+            <MainDirector load={load} />
         </Box>
     );
 }
