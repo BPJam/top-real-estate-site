@@ -1,7 +1,19 @@
-import React from 'react';
-import { Box, Button, Card, CardContent, CardMedia, Typography } from '@mui/material';
+import React, { useState } from 'react';
+import { Box, Button, Card, CardContent, CardMedia, Link, List, ListItem, ListItemButton, ListItemIcon, ListItemText, ListSubheader, Modal, Typography } from '@mui/material';
+
+const Kyivstar = () => <Box sx={{ width: '27px', height: '27px' }} component={'img'} src='./kyivstar-logo.png' alt='kyivstar' />
+const Lifecell = () => <Box sx={{ width: '27px', height: '27px' }} component={'img'} src='./lifecell-logo.png' alt='lifecell' />;
+
+const WhatsApp = () => <Box sx={{ width: '27px', height: '27px' }} component={'img'} src='./whatsapp-logo.png' alt='whatsapp' />;
+const Telegram = () => <Box sx={{ width: '27px', height: '27px' }} component={'img'} src='./telegram-logo.png' alt='telegram' />;
 
 function MainHeader({ load, isLoaded }) {
+    const [openModal, setOpenModal] = useState(false);
+
+    const handleModalOpen = () => setOpenModal(true);
+
+    const onClose = () => setOpenModal(false);
+
     return (
         <Box component={'section'} sx={{ height: '100vh', width: '100%' }}>
             <Card sx={{ border: 'none', boxShadow: 'none', backgroundColor: 'initial', height: '100%', width: '100%'  }}>
@@ -49,9 +61,79 @@ function MainHeader({ load, isLoaded }) {
                                             transition: 'all 0.3s ease-in-out',
                                             WebkitTransition: '0.3s all ease-in-out'
                                         }
-                                    }}>
-                                        - Зв'язатися -
-                                    </Button>
+                                    }}
+                                    onClick={handleModalOpen}
+                                >
+                                    - Зв'язатися -
+                                </Button>
+
+                                <Modal
+                                    open={ openModal }
+                                    onClose={ (_, reason) => onClose(reason) }
+                                    hideBackdrop={ false }
+                                >
+                                    <Box sx={{ backgroundColor: 'rgba(0,0,0,0.8)', position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}>
+                                        <List>
+                                            <ListSubheader sx={{ backgroundColor: 'rgba(0,0,0,0)', color: 'whitesmoke', textAlign: 'center', cursor: 'default', fontSize: '0.9rem' }}>Подзвонити:</ListSubheader>
+                                            <ListItem>
+                                                <ListItemButton disableRipple sx={{ '&:hover': { backgroundColor: 'rgba(255,255,255,0.2)' } }}>
+                                                    <Link target='_top' href='tel:+380978357007'>
+                                                        <ListItemIcon sx={{ minWidth: 0, pr: 1, cursor: 'pointer' }}>
+                                                            <Kyivstar />
+                                                        </ListItemIcon>
+                                                    </Link>
+
+                                                    <Link target='_top' href='tel:+380978357007'>
+                                                        <ListItemText sx={{ color: 'whitesmoke', '& > span': { cursor: 'pointer' }  }} primary={`+380 97 835 70 07`} />
+                                                    </Link>
+                                                </ListItemButton>
+                                            </ListItem>
+
+                                            <ListItem>
+                                                <ListItemButton disableRipple sx={{ '&:hover': { backgroundColor: 'rgba(255,255,255,0.2)' } }}>
+                                                    <Link target='_top' href='tel:+380937525497'>
+                                                        <ListItemIcon sx={{ minWidth: 0, pr: 1, cursor: 'pointer' }}>
+                                                            <Lifecell />
+                                                        </ListItemIcon>
+                                                    </Link>
+
+                                                    <Link target='_top' href='tel:+380937525497'>
+                                                        <ListItemText sx={{ color: 'whitesmoke', '& > span': { cursor: 'pointer' }  }} primary={`+380 93 752 54 97`} />
+                                                    </Link>
+                                                </ListItemButton>
+                                            </ListItem>
+
+                                            <ListSubheader sx={{ backgroundColor: 'rgba(0,0,0,0)', color: 'whitesmoke', textAlign: 'center', cursor: 'default', fontSize: '0.9rem' }}>Написати:</ListSubheader>
+                                            <ListItem>
+                                                <ListItemButton disableRipple sx={{ '&:hover': { backgroundColor: 'rgba(255,255,255,0.2)' } }}>
+                                                    <Link target='_blank' href='https://api.whatsapp.com/send?phone=380937525497'>
+                                                        <ListItemIcon sx={{ minWidth: 0, pr: 1, cursor: 'pointer' }}>
+                                                            <WhatsApp />
+                                                        </ListItemIcon>
+                                                    </Link>
+
+                                                    <Link target='_blank' href='https://api.whatsapp.com/send?phone=380937525497'>
+                                                        <ListItemText sx={{ color: 'whitesmoke', '& > span': { cursor: 'pointer' }  }} primary={`WhatsApp`} />
+                                                    </Link>
+                                                </ListItemButton>
+                                            </ListItem>
+
+                                            <ListItem>
+                                                <ListItemButton disableRipple sx={{ '&:hover': { backgroundColor: 'rgba(255,255,255,0.2)' } }}>
+                                                    <Link target='_blank' href='https://t.me/Viktoria_BayrakTB'>
+                                                        <ListItemIcon sx={{ minWidth: 0, pr: 1, cursor: 'pointer' }}>
+                                                            <Telegram />
+                                                        </ListItemIcon>
+                                                    </Link>
+
+                                                    <Link target='_blank' href='https://t.me/Viktoria_BayrakTB'>
+                                                        <ListItemText sx={{ color: 'whitesmoke', '& > span': { cursor: 'pointer' }  }} primary={`Telegram`} />
+                                                    </Link>
+                                                </ListItemButton>
+                                            </ListItem>
+                                        </List>
+                                    </Box>
+                                </Modal>
                             </Box>
                         :
                             <Typography component="p">
