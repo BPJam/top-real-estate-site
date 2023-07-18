@@ -10,13 +10,11 @@ const headerStyle = {
         zIndex: 999,
 
         logoWrapper: {
-            minWidth: '3.5rem',
-            minHeight: '3.5rem',
-            maxWidth: '3.5rem',
-            maxHeight: '3.5rem',
+            minWidth: '3.8rem',
+            minHeight: '3.8rem',
+            maxWidth: '3.8rem',
+            maxHeight: '3.8rem',
             borderRadius: '100%',
-            border: '5px solid #788d58',
-            backgroundColor: '#fff',
             overflow: 'hidden',
             cursor: 'pointer',
 

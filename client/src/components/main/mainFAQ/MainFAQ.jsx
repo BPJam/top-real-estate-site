@@ -72,7 +72,7 @@ function MainFAQ() {
 
                                     <Box id={e._id} component={'img'} src={ open.includes(e._id) ? './minus.png' : './plus.png' } alt='faq-icon' sx={{ width: '3rem', height: '3rem', cursor: 'pointer' }} onClick={(e) => handleClick(e)} />
                                     
-                                    <Collapse in={ open.includes(e._id) } timeout={800} unmountOnExit sx={{ width: '100%' }}>
+                                    <Collapse in={ open.includes(e._id) } timeout={600} unmountOnExit sx={{ width: '100%' }}>
                                         <List component="section" sx={{ '& .MuiListItem-root': {  padding: 0 }}}>
                                             <ListItem>
                                                 <ListItemText primary={e.description} />

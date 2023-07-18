@@ -48,9 +48,9 @@ function Header({ load }) {
     
     return ( 
         <Box component={'header'} sx={ headerStyle.globalHeader }>
-            <Box sx={ headerStyle.globalHeader.logoWrapper } onClick={() => window.location.assign('/')}> {/* to inst */}
-                <Box component={'img'} src="./logo.jpg" alt="logo" />
-            </Box>
+            <Link target={'_blank'} href={'https://instagram.com/top_in_estate?igshid=MjEwN2IyYWYwYw=='} sx={ headerStyle.globalHeader.logoWrapper }>
+                <Box component={'img'} src="./logo-head.png" alt="logo" />
+            </Link>
 
             <Box component={'nav'} sx={ headerStyle.globalHeader.nav }>
                 <List sx={ headerStyle.globalHeader.nav.menu }>
