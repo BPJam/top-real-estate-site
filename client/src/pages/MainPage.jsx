@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Footer, Header, Main } from '../components';
+import { Footer, Header, Main, UpButton } from '../components';
 
 function MainPage() {
     const [load, setLoad] = useState(false);
@@ -13,6 +13,7 @@ function MainPage() {
             <Header load={ load } />
             <Main load={ load } isLoaded={ isLoaded } />
             <Footer load={ load } />
+            <UpButton />
         </>
     );
 }

@@ -47,7 +47,7 @@ function Header({ load }) {
     }
     
     return ( 
-        <Box component={'header'} sx={ headerStyle.globalHeader }>
+        <Box id='up' component={'header'} sx={ headerStyle.globalHeader }>
             <Link target={'_blank'} href={'https://instagram.com/top_in_estate?igshid=MjEwN2IyYWYwYw=='} sx={ headerStyle.globalHeader.logoWrapper }>
                 <Box component={'img'} src="./logo-head.png" alt="logo" />
             </Link>
