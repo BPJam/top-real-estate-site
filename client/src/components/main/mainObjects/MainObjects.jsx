@@ -1,16 +1,19 @@
 import React from 'react';
+
 import { Box, Typography } from '@mui/material';
+
+import mainObjectStyle from './mainObjectsStyle';
 
 function MainObjects() {
     return (
-        <Box id='objects' component={'section'} sx={{width: '100%', height: 'calc(100vh + 12rem)', padding: '6rem' }}>
-            <Box component={'section'} sx={{ width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                <Box component={'section'} sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', mb: '3rem' }}>
-                    <Typography component={'h1'} sx={{ textAlign: 'center', fontSize: '2.8rem', fontWeight: 500, color: '#788d58', mb: '2rem' }}>
+        <Box id='objects' component={'section'} sx={ mainObjectStyle }>
+            <Box component={'section'} sx={ mainObjectStyle.wrapper }>
+                <Box component={'section'} sx={ mainObjectStyle.header }>
+                    <Typography component={'h1'} sx={ mainObjectStyle.header.h1 }>
                         Наші пропозиції
                     </Typography>
 
-                    <Typography component={'p'} sx={{ fontSize: '1.1rem', textAlign: 'center', pl: '15%', pr: '15%', fontWeight: 500 }}>
+                    <Typography component={'p'} sx={ mainObjectStyle.header.p }>
                         Наш офіс розташований в престижному районі Києва, і ми покриваємо всі
                         центральні райони міста. Ми пишаємося наданням персоналізованого
                         обслуговування нашим клієнтам і забезпеченням високоякісного досвіду в
