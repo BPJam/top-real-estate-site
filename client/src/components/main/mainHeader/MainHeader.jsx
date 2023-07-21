@@ -7,6 +7,7 @@ import
     Card,
     CardContent,
     CardMedia,
+    CircularProgress,
     Link,
     List,
     ListItem,
@@ -149,9 +150,14 @@ function MainHeader({ load, isLoaded }) {
                                 </Modal>
                             </Box>
                         :
-                            <Typography component="p">
-                                Please wait, loading... 
-                            </Typography>
+                            <Box sx={ mainHeaderStyle.loading }>
+                                <CircularProgress color='inherit' />
+
+                                <Typography component="p" sx={ mainHeaderStyle.loading.text }>
+                                    Please wait, loading... 
+                                </Typography>
+                            </Box>
+                            
                     }
                 </CardContent>
             </Card>

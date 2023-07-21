@@ -122,6 +122,19 @@ const mainHeaderStyle = {
     logoImage: {
         width: '27px',
         height: '27px'
+    },
+
+    loading: {
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        color: 'white',
+
+        text: {
+            color: 'inherit',
+            marginTop: '1rem'
+        }
     }
 }
 

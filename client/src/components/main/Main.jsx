@@ -15,13 +15,20 @@ function Main({ load, isLoaded }) {
     return (
         <Box component={'main'}>
             <MainHeader load={load} isLoaded={isLoaded} />
-            <MainCompanyInfo load={load} />
-            <MainProducts load={load} />
-            <Delemiter />
-            <MainObjects load={load} />
-            <MainDirector load={load} />
-            <MainFAQ load={load} />
-            <MainCallback load={load} />
+            {
+                load ?
+                    <>
+                        <MainCompanyInfo />
+                        <MainProducts />
+                        <Delemiter />
+                        <MainObjects />
+                        <MainDirector />
+                        <MainFAQ />
+                        <MainCallback />
+                    </>
+                :
+                    <></>
+            }
         </Box>
     );
 }
