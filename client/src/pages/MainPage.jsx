@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Header, Main } from '../components';
+import { Footer, Header, Main, UpButton } from '../components';
 
 function MainPage() {
     const [load, setLoad] = useState(false);
@@ -11,7 +11,9 @@ function MainPage() {
     return (
         <>
             <Header load={ load } />
-            <Main load={ load } isLoaded={ isLoaded } />   
+            <Main load={ load } isLoaded={ isLoaded } />
+            <Footer load={ load } />
+            <UpButton />
         </>
     );
 }
