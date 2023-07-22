@@ -10,6 +10,7 @@ const upButonStyle = {
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: '50%',
+    cursor: 'pointer',
 
     ':hover': {
         transform: 'scale(1.3)',
@@ -25,7 +26,8 @@ const upButonStyle = {
     
     text: {
         fontSize: '0.8rem',
-        color: '#788d58'
+        color: '#788d58',
+        cursor: 'pointer'
     }
 };
 
