@@ -1,5 +1,6 @@
 const jwt = require('jsonwebtoken');
 const UserToken = require('../database/models/UserToken');
+const AdminToken = require('../database/models/AdminToken');
 require('dotenv').config();
 
 class TokenService {
@@ -31,7 +32,19 @@ class TokenService {
         }
     }
 
-    async saveToken(objectId, refreshToken) {
+    async saveToken(objectId, refreshToken, isAdmin = false) {
+        if (isAdmin) {
+            const adminToken = await AdminToken.findOne({ admin: objectId });
+
+            if (adminToken) {
+                adminToken.refreshTokens.push(refreshToken);
+                return adminToken.save();
+            }
+    
+            const token = await AdminToken.create({ user: objectId, refreshTokens: [ refreshToken ] });
+            return token;
+        }
+
         const userToken = await UserToken.findOne({ user: objectId });
 
         if (userToken) {
@@ -43,7 +56,15 @@ class TokenService {
         return token;
     }
 
-    async removeToken(refreshToken) {
+    async removeToken(refreshToken, isAdmin = false) {
+        if (isAdmin) {
+            await AdminToken.updateOne(
+                { refreshTokens: refreshToken }, 
+                { $pull: { refreshTokens: refreshToken } }
+            );
+            return;
+        }
+
         await UserToken.updateOne(
             { refreshTokens: refreshToken }, 
             { $pull: { refreshTokens: refreshToken } }
@@ -51,7 +72,12 @@ class TokenService {
         return;
     }
 
-    async findToken(refreshToken) {
+    async findToken(refreshToken, isAdmin = false) {
+        if (isAdmin) {
+            const tokenData = await AdminToken.findOne({ refreshTokens: refreshToken });
+            return tokenData;
+        }
+
         const tokenData = await UserToken.findOne({ refreshTokens: refreshToken });
         return tokenData;
     }
