@@ -1,0 +1,13 @@
+.admin-page {
+    width: 100vw;
+    min-height: 100vh;
+    padding: 3rem;
+}
+
+.email, .password, .submit {
+    border: 1px solid black;
+}
+
+.submit {
+    background-color: aqua;
+}

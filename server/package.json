@@ -1,0 +1,39 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "Server for saving objects of top real estate",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "client": "npm start --prefix ../client",
+    "server": "nodemon server.js",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "keywords": [
+    "socket.io",
+    "express",
+    "server",
+    "node.js",
+    "sql"
+  ],
+  "author": "Mykhailo Potseluiev <hividermen@gmail.com>",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "express-validator": "^7.0.1",
+    "http": "^0.0.1-security",
+    "jsonwebtoken": "^9.0.1",
+    "mongoose": "^7.4.0",
+    "nodemailer": "^6.9.4",
+    "socket.io": "^4.7.1",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0",
+    "nodemon": "^3.0.1"
+  }
+}
