@@ -4,7 +4,7 @@
     padding: 3rem;
 }
 
-.email, .password, .submit {
+.name, .password, .submit {
     border: 1px solid black;
 }
 

@@ -17,12 +17,12 @@ class AdminService {
 
         const adminDto = new AdminDto(admin);
         const tokens = tokenService.generateToken({...adminDto});
-        await tokenService.saveToken(adminDto.id, tokens.refreshToken, true);
+        await tokenService.saveToken(adminDto.id, tokens.refreshToken, '', true);
 
         return { ...tokens, admin: adminDto };
     }
 
-    async login(name, password) {
+    async login(name, password, refreshTokenAdmin) {
         const admin = await Admin.findOne({ name });
 
         if (!admin) {
@@ -37,7 +37,7 @@ class AdminService {
 
         const adminDto = new AdminDto(admin);
         const tokens = tokenService.generateToken({...adminDto});
-        await tokenService.saveToken(adminDto.id, tokens.refreshToken, true);
+        await tokenService.saveToken(adminDto.id, tokens.refreshToken, refreshTokenAdmin, true);
 
         return { ...tokens, admin: adminDto };
     }
@@ -62,7 +62,8 @@ class AdminService {
         const admin = await Admin.findById(data.id);
         const adminDto = new AdminDto(admin);
         const tokens = tokenService.generateToken({...adminDto});
-        await tokenService.saveToken(adminDto.id, tokens.refreshToken, true);
+        const oldRefreshToken = refreshToken;
+        await tokenService.saveToken(adminDto.id, tokens.refreshToken, oldRefreshToken, true);
 
         return { ...tokens, admin: adminDto };
     }

@@ -14,7 +14,7 @@ class AdminController {
 
             const { name, password } = req.body;
             const adminData = await adminService.registration(name, password);
-            res.cookie('refreshToken-admin', adminData.refreshToken, { maxAge: 15 * 24 * 60 * 60 * 1000, httpOnly: true, secure: true });
+            res.cookie('refreshTokenAdmin', adminData.refreshToken, { maxAge: 15 * 24 * 60 * 60 * 1000, httpOnly: true });
 
             return res.json(adminData);
         } catch (e) {
@@ -25,9 +25,10 @@ class AdminController {
     async login(req, res, next) {
         try {
             const { name, password } = req.body;
+            const { refreshTokenAdmin } = req.cookies;
 
-            const adminData = await adminService.login(name, password)
-            res.cookie('refreshToken-admin', adminData.refreshToken, { maxAge: 15 * 24 * 60 * 60 * 1000, httpOnly: true, secure: true });
+            const adminData = await adminService.login(name, password, refreshTokenAdmin);
+            res.cookie('refreshTokenAdmin', adminData.refreshToken, { maxAge: 15 * 24 * 60 * 60 * 1000, httpOnly: true });
 
             return res.json(adminData);
         } catch (e) {
@@ -37,11 +38,11 @@ class AdminController {
 
     async logout(req, res, next) {
         try {
-            const { refreshToken } = req.cookies;
+            const { refreshTokenAdmin } = req.cookies;
 
-            await adminService.logout(refreshToken);
+            await adminService.logout(refreshTokenAdmin);
 
-            res.clearCookie('refreshToken');
+            res.clearCookie('refreshTokenAdmin');
             res.status(200).json();
         } catch (e) {
             next(e);
@@ -50,11 +51,11 @@ class AdminController {
 
     async refresh(req, res, next) {
         try {
-            const { refreshToken } = req.cookies;
+            const { refreshTokenAdmin } = req.cookies;
 
-            const adminData = await adminService.refresh(refreshToken);
-            res.cookie('refreshToken-admin', adminData.refreshToken, { maxAge: 15 * 24 * 60 * 60 * 1000, httpOnly: true, secure: true });
-
+            const adminData = await adminService.refresh(refreshTokenAdmin);
+            res.cookie('refreshTokenAdmin', adminData.refreshToken, { maxAge: 15 * 24 * 60 * 60 * 1000, httpOnly: true });
+            
             return res.json(adminData);
         } catch (e) {
             next(e);

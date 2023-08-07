@@ -32,22 +32,24 @@ class TokenService {
         }
     }
 
-    async saveToken(objectId, refreshToken, isAdmin = false) {
+    async saveToken(objectId, refreshToken, oldRefreshToken, isAdmin = false) {
         if (isAdmin) {
             const adminToken = await AdminToken.findOne({ admin: objectId });
 
             if (adminToken) {
+                await this.removeToken(oldRefreshToken, true);
                 adminToken.refreshTokens.push(refreshToken);
                 return adminToken.save();
             }
     
-            const token = await AdminToken.create({ user: objectId, refreshTokens: [ refreshToken ] });
+            const token = await AdminToken.create({ admin: objectId, refreshTokens: [ refreshToken ] });
             return token;
         }
 
         const userToken = await UserToken.findOne({ user: objectId });
 
         if (userToken) {
+            await this.removeToken(oldRefreshToken);
             userToken.refreshTokens.push(refreshToken);
             return userToken.save();
         }
