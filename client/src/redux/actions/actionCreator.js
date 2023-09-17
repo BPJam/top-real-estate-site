@@ -15,7 +15,13 @@ import
     USER_LOGIN_ERROR,
 
     ADMIN_LOGIN,
-    USER_LOGIN
+    USER_LOGIN,
+
+    SET_STATE_ADMIN_PANEL,
+    RELOAD_STATE_ADMIN_PANEL,
+
+    SET_CURRENT_SHOW_ADMIN_PANEL,
+    RELOAD_CURRENT_SHOW_ADMIN_PANEL
 }
 from "../constants";
 
@@ -77,4 +83,22 @@ export const userLoginSuccess = (payload) => ({
 export const userLoginError = (payload) => ({
     type: USER_LOGIN_ERROR,
     payload
+});
+
+export const setStateAdminPanel = (payload) => ({
+    type: SET_STATE_ADMIN_PANEL,
+    payload
+});
+
+export const reloadStateAdminPanel = () => ({
+    type: RELOAD_STATE_ADMIN_PANEL
+});
+
+export const setCurrentShowAdminPanel = (payload) => ({
+    type: SET_CURRENT_SHOW_ADMIN_PANEL,
+    payload
+});
+
+export const reloadCurrentShowAdminPanel = () => ({
+    type: RELOAD_CURRENT_SHOW_ADMIN_PANEL
 });

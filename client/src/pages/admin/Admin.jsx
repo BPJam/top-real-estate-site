@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import $api from '../../http';
+import './admin.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { adminLogin, fetchDataAdmin } from '../../redux/actions/actionCreator';
+import { adminLogin, fetchDataAdmin, reloadCurrentShowAdminPanel, reloadStateAdminPanel } from '../../redux/actions/actionCreator';
 import { Alert, AlertTitle, IconButton } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
-import './admin.css';
-import $api from '../../http';
+import AdminPanel from './AdminPanel';
 
 function Admin() {
     const [admin, setAdmin] = useState({
@@ -28,12 +28,14 @@ function Admin() {
         .catch(error => {
             dispatch(fetchDataAdmin(error.response));
         });
+    // eslint-disable-next-line
     }, []);
 
     useEffect(() => {
         setTimeout(() => {
             alertOpenHandler(false);
         }, 8000);
+    // eslint-disable-next-line
     }, [])
 
     const changeHandler = (event) => {
@@ -58,87 +60,107 @@ function Admin() {
         await $api.post('/admin-logout', {})
         .then(() => {
             dispatch(adminLogin({}));
+            dispatch(reloadStateAdminPanel());
+            dispatch(reloadCurrentShowAdminPanel());
             window.location.reload();
         })
         .catch(error => {
             dispatch(adminLogin({}));
+            dispatch(reloadStateAdminPanel());
+            dispatch(reloadCurrentShowAdminPanel());
             window.location.reload();
         });
     }
     
     if (data.accessToken) {
         return (
-            <div className='admin-page'>
-                <h1>Привіт { data.admin.name }</h1>
-                <br />
-                <br />
-                <button onClick={exitHandler}>Вийти</button>
+            <div className='admin-page-logged'>
+                <div className='ap-header'>
+                    <h1>Aдмін панель</h1>
+                    <div className="exit">
+                        { data.admin.name }
+                        
+                        <button onClick={exitHandler}>
+                            <img width="32" height="32" src="https://img.icons8.com/ios/100/exit--v2.png" alt="exit--v2"/>
+                        </button>
+                    </div>
+                </div>
+                
+                <AdminPanel />
             </div>
         );
     }
 
     return (
         <div className='admin-page'>
-            <div>
-                <input
-                    type='text'
-                    className='name'
-                    name='name'
-                    value={admin.name}
-                    placeholder="Ім'я"
-                    onChange={event => changeHandler(event)}
-                />
-                <br />
-                <br />
-                <input
-                    type='password'
-                    className='password'
-                    name='password'
-                    value={admin.password}
-                    placeholder="Пароль"
-                    onChange={event => changeHandler(event)}
-                />
-                <br />
-                <br />
-                <button
-                    className='submit'
-                    onClick={submitHandler}
-                >
-                    Увійти
-                </button>
+            <div className='login'>
+                <div className='form'>
+                    <div className="form-item">
+                        <input
+                            type='text'
+                            className='name'
+                            name='name'
+                            id='name'
+                            value={admin.name}
+                            placeholder="Viktoriia"
+                            onChange={event => changeHandler(event)}
+                        />
+                        <label htmlFor='name'>Ім'я</label>
+                    </div>
 
-                {
-                    open ?
-                        <Alert
-                            sx={{
-                                position: 'absolute',
-                                width: '30%',
-                                top: '3rem',
-                                right: '3rem'
-                            }}
-                            severity="error"
-                            action={
-                                <IconButton
-                                    aria-label="close"
-                                    color="inherit"
-                                    size="small"
-                                    onClick={() => {
-                                        alertOpenHandler(false);
-                                    }}
-                                >
-                                    <CloseIcon fontSize="inherit" />
-                                </IconButton>
-                            }
-                            
-                        >
-                            <AlertTitle>Error</AlertTitle>
+                    <div className="form-item">
+                        <input
+                            type='password'
+                            className='password'
+                            name='password'
+                            id='password'
+                            value={admin.password}
+                            placeholder="*******"
+                            onChange={event => changeHandler(event)}
+                        />
+                        <label htmlFor='password'>Пароль</label>
+                    </div>
 
-                            { adminData.message ? adminData.message : '' }
-                        </Alert>
-                    :
-                        <></>
-                }
-                
+                    <button
+                        className='submit'
+                        onClick={submitHandler}
+                    >
+                        УВІЙТИ
+                    </button>
+
+                    {
+                        open ?
+                            <Alert
+                                sx={{
+                                    position: 'absolute',
+                                    width: '30%',
+                                    top: '3rem',
+                                    right: '3rem'
+                                }}
+                                severity="error"
+                                action={
+                                    <IconButton
+                                        aria-label="close"
+                                        color="inherit"
+                                        size="small"
+                                        onClick={() => {
+                                            alertOpenHandler(false);
+                                        }}
+                                    >
+                                        <CloseIcon fontSize="inherit" />
+                                    </IconButton>
+                                }
+                                
+                            >
+                                <AlertTitle>Error</AlertTitle>
+
+                                { adminData.message ? adminData.message : '' }
+                            </Alert>
+                        :
+                            <></>
+                    }
+                    
+                </div>
             </div>
         </div>
     );

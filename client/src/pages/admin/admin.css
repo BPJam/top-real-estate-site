@@ -1,13 +1,247 @@
-.admin-page {
-    width: 100vw;
-    min-height: 100vh;
-    padding: 3rem;
+::-webkit-input-placeholder {
+    opacity: 0;
 }
 
-.name, .password, .submit {
-    border: 1px solid black;
+label {
+    position: absolute;
+    left: 8px;
+    top: 17px;
+    transition: top 0.5s;
+    color: #282828;
+}
+
+.admin-page {
+    width: 100%;
+    height: 100vh;
+    padding: 2rem;
+    background-color: rgba( 120, 141, 88, 0.8);
+}
+
+.login {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+    height: 50%;
+    background-color: rgba( 120, 141, 88, 0.6);
+    border-radius: 25px;
+    -webkit-box-shadow: 5px 5px 8px 3px rgba(0,0,0,0.75);
+    -moz-box-shadow: 5px 5px 8px 3px rgba(0,0,0,0.75);
+    box-shadow: 5px 5px 8px 3px rgba(0,0,0,0.75);
+}
+
+.form-item {
+    position: relative;
+    padding-top: 5px;
+    margin-bottom: 30px;
+}
+
+.name, .password {
+    border-bottom: 2px solid #282828;
+    padding: 10px 8px;
+    color: #282828;
+}
+
+.name::placeholder, .password::placeholder {
+    color: wheat;
+}
+
+input:focus + label,
+input:not(:placeholder-shown) + label {
+    top: -10px;
+}
+
+input:focus {
+    outline: none;
+    background-size: 100% 100%, 100% 100%;
+    transition-duration: 0.3s;
+    box-shadow: none;
+}
+
+input:focus::-webkit-input-placeholder {
+  opacity: 1;
 }
 
 .submit {
-    background-color: aqua;
+    padding: 10px 8px;
+    color: #282828;
+    background-color: rgba(40, 40, 40, 0.1);
+}
+
+.submit:hover {
+    background-color: rgba(40, 40, 40, 0.3);
+}
+
+.exit {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 1.4rem;
+}
+
+.exit button {
+    margin-left: 1.2rem;
+}
+
+.admin-page-logged {
+    width: 100%;
+    min-height: 100vh;
+    background-color: rgba( 120, 141, 88, 0.5);
+}
+
+.ap-header {
+    min-height: 3.5rem;
+    padding: 1rem 1.5rem 0 1.5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.ap-header h1 {
+    font-size: 2rem;
+}
+
+.nav-icon {
+    position: absolute;
+    background-color: rgba( 120, 141, 88, 0.6);
+    margin-top: 1rem;
+    padding: 15px 0 15px 10px ;
+    border-radius: 0 50% 50% 0;
+    left: -17.5px;
+    transition: left 0.7s ease-in-out, padding 0.7s ease-in-out;
+    border-left: 1px solid rgb( 120, 141, 88);
+}
+
+.open {
+    left: 30%;
+    padding: 15px 0 15px 0;
+}
+
+.ap-controlls {
+    position: relative;
+    width: 100%;
+    min-height: calc(100vh - 4.5rem);
+    background-color: rgba( 120, 141, 88, 0.6);
+    margin-top: 1rem;
+}
+
+.default-open {
+    z-index: 999;
+}
+
+.side-action {
+    position: sticky;
+    top: 0;
+}
+
+.action-menu {
+    height: 100%;
+    width: 30%;
+    position: absolute;
+    left: -30%;
+    transition: left 0.7s ease-in-out;
+}
+
+.clicked {
+    left: 0;
+}
+
+.action-items {
+    height: calc(100vh - 4.5rem);
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba( 120, 141, 88, 0.6);
+    margin-top: 1rem;
+}
+
+.action-item {
+    flex-grow: 1;
+    margin: 1.5rem 0;
+    padding: 2rem 1rem;
+}
+
+.choosed {
+    border: 1px solid rgb( 120, 141, 88);
+    background-color: rgb( 120, 141, 88);
+}
+
+.info {
+    min-height: calc(100vh - 4.5rem);
+    padding: 1.5rem;
+}
+
+.info-nav {
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    align-items: flex-end;
+    width: 100%;
+}
+
+.info-nav h1 {
+    font-size: 1.35rem;
+    padding-bottom: 20px;
+}
+
+.info-delemiter {
+    width: 100%;
+    border: 1px solid rgba(40, 40, 40, 0.3);
+}
+
+.active-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-top: 0.5rem;
+}
+
+.active-buttons-choose {
+    margin-right: 1.5rem;
+    border-radius: 25px;
+    background-color: rgba( 120, 141, 88, 0.6);
+    border: 1px solid rgb( 120, 141, 88);
+}
+
+.choose-actual {
+    padding: 1rem;
+    border-radius: 25px;
+}
+
+.choose-archive {
+    padding: 1rem;
+    border-radius: 25px;
+}
+
+.current-choosed-aa-o {
+    background-color: rgb( 120, 141, 88);
+    font-weight: 500;
+}
+
+.active-buttons-add {
+    padding: 1rem;
+    border-radius: 25px;
+    background-color: rgb( 120, 141, 88);
+}
+
+.active-buttons-add:hover {
+    transform: scale(1.05);
+}
+
+.active-buttons-add:active {
+    transform: scale(0.8);
+    transition: transform ease-in-out 0.11s;
+}
+
+.bottom-active-p {
+    margin-top: 0.5rem;
 }
