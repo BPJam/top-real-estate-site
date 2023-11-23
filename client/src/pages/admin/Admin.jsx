@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import $api from '../../http';
 import './admin.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { adminLogin, fetchDataAdmin, reloadCurrentShowAdminPanel, reloadStateAdminPanel } from '../../redux/actions/actionCreator';
+import { adminLogin, fetchDataAdmin, reloadCurrentShowAdminPanel, reloadStateAdminPanel, reloadTypeCellAdminPanel } from '../../redux/actions/actionCreator';
 import { Alert, AlertTitle, IconButton } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 import AdminPanel from './AdminPanel';
@@ -62,12 +62,14 @@ function Admin() {
             dispatch(adminLogin({}));
             dispatch(reloadStateAdminPanel());
             dispatch(reloadCurrentShowAdminPanel());
+            dispatch(reloadTypeCellAdminPanel());
             window.location.reload();
         })
         .catch(error => {
             dispatch(adminLogin({}));
             dispatch(reloadStateAdminPanel());
             dispatch(reloadCurrentShowAdminPanel());
+            dispatch(reloadTypeCellAdminPanel());
             window.location.reload();
         });
     }

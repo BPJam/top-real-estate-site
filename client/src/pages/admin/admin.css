@@ -244,4 +244,80 @@ input:focus::-webkit-input-placeholder {
 
 .bottom-active-p {
     margin-top: 0.5rem;
+    display: flex;
+    flex-direction: row;
+}
+
+.active-sorting {
+    height: 100%;
+    border-radius: 25px;
+    border: 1px solid rgb( 120, 141, 88);
+    padding: 0 2rem;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+.active-sorting option {
+    background-color: rgba( 120, 141, 88, 0.6);
+    border-radius: 25px;
+    border: 6px solid black;
+}
+
+.active-sorting::-ms-expand {
+    display: none; 
+}
+
+.selector-wrapper {
+    position: relative;
+    border: 1px solid rgb( 120, 141, 88);
+    border-radius: 25px;
+    margin-right: 1rem;
+}
+
+.selector-wrapper:hover {
+    box-shadow: 0px 0px 3px gray;
+}
+
+.selector-arrow {
+    position: absolute;
+    z-index: -9999;
+    border: 8px solid transparent; 
+    border-bottom: 0;
+    right: 10px;
+}
+
+.selector-arrow:nth-child(1) {
+    top: 43%;
+    border-top-color: black;
+}
+
+.selector-arrow:nth-child(2) {
+    top: 38.5%;
+    border-top-color: white;
+}
+
+.view-current {
+    display: flex;
+    flex-direction: row;
+    border: 2px solid rgb( 120, 141, 88);
+    border-radius: 28px;
+}
+
+.view-thumbnail {
+    padding: 0.5rem 0.6rem 0.5rem 0.6rem;
+}
+
+.view-list {
+    padding: 0.5rem 0.6rem 0.5rem 0.6rem;
+}
+
+.current-view-t {
+    background-color: rgb( 120, 141, 88);
+    border-radius: 25px 0 0 25px;
+}
+
+.current-view-l {
+    background-color: rgb( 120, 141, 88);
+    border-radius: 0 25px 25px 0;
 }

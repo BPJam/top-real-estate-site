@@ -21,7 +21,9 @@ import
     RELOAD_STATE_ADMIN_PANEL,
 
     SET_CURRENT_SHOW_ADMIN_PANEL,
-    RELOAD_CURRENT_SHOW_ADMIN_PANEL
+    RELOAD_CURRENT_SHOW_ADMIN_PANEL,
+    SET_TYPE_CELL_ADMIN_PANEL,
+    RELOAD_TYPE_CELL_ADMIN_PANEL
 }
 from "../constants";
 
@@ -102,3 +104,13 @@ export const setCurrentShowAdminPanel = (payload) => ({
 export const reloadCurrentShowAdminPanel = () => ({
     type: RELOAD_CURRENT_SHOW_ADMIN_PANEL
 });
+
+export const setTypeCellAdminPanel = (payload) => ({
+    type: SET_TYPE_CELL_ADMIN_PANEL,
+    payload
+});
+
+export const reloadTypeCellAdminPanel = () => ({
+    type: RELOAD_TYPE_CELL_ADMIN_PANEL
+});
+
